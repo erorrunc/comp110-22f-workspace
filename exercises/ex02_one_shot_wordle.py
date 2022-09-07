@@ -6,7 +6,7 @@ secret_word: str = "python"
 guess_word: str = input(f"What is your {len(secret_word)}-letter guess? ")
 
 while len(guess_word) != len(secret_word):
-    guess_word: str = input(f"That was not {len(secret_word)} letters! Try again: ")
+    guess_word: input(f"That was not {len(secret_word)} letters! Try again: ")
 
 index_of_word: int = 0
 emojis_of_guess: str = ""
