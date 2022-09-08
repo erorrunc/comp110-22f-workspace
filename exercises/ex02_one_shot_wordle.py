@@ -7,7 +7,7 @@ guess_word: str = input(f"What is your {len(secret_word)}-letter guess? ")
 
 #If the guess is not the correct amount of characters
 while len(guess_word) != len(secret_word):
-    guess_word: str = input(f"That was not {len(secret_word)} letters! Try again: ")
+    input(f"That was not {len(secret_word)} letters! Try again: ")
 
 #Defining index and resulting emojis variables
 index_of_word: int = 0
