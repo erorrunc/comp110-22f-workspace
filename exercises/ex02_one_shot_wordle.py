@@ -9,17 +9,17 @@ guess_word: str = input(f"What is your {len(secret_word)}-letter guess? ")
 while len(guess_word) != len(secret_word):
     guess_word = input(f"That was not {len(secret_word)} letters! Try again: ")
 
-# defining index of secret word and resulting emojis variables
+# defining index of secret_word and resulting emojis variables
 i: int = 0
 result: str = ""
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
-while i < len(secret_word):# producing green boxes
+while i < len(secret_word):  # producing green boxes for correct letters
     if guess_word[i] == secret_word[i]:
         result += GREEN_BOX
-    else:# producing white and yellow boxes
+    else:  # producing white and yellow boxes for incorrect or partially correct letters
         guessed_character: bool = False
         idx: int = 0
         while guessed_character is not True and idx < len(secret_word):
@@ -35,7 +35,7 @@ while i < len(secret_word):# producing green boxes
 print(result)
 
 if len(guess_word) == len(secret_word):
-    if str(guess_word) == str(secret_word):# when the correct word is guessed
+    if str(guess_word) == str(secret_word):  # output when the correct word is guessed
         print("Woo! You got it!")
-    else:# when an incorrect word is guessed
+    else:  # output when an incorrect word is guessed
         print("Not quite. Play again soon!")
