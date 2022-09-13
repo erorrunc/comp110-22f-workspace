@@ -2,6 +2,7 @@
 
 __author__ = "730555076"
 
+
 def contains_char(word: str, character: str) -> bool:
     """Finding a matching character in the guess word."""
     assert len(character) == 1
@@ -14,10 +15,12 @@ def contains_char(word: str, character: str) -> bool:
             i += 1
     return False
 
+
 # assigning emoji variables
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
+
 
 def emojified(guess: str, secret: str) -> str:
     """Printing the colored box emojis of the guess word compared to the secret word."""
@@ -34,12 +37,14 @@ def emojified(guess: str, secret: str) -> str:
         i += 1
     return result
 
+
 def input_guess(expected_length: int) -> str:
     """Prompt user for a guess until their guess matches the expected length."""
     guess: str = input(f"Enter a {expected_length} character word: ")
     while len(guess) != expected_length:  # making sure the user's guess is the correct length
         guess = input(f"That wasn't {expected_length} chars! Try again: ")
     return guess
+
 
 def main() -> None:
     """The entry point of the program and main game loop."""
