@@ -63,5 +63,6 @@ def main() -> None:
     if guess != secret:
         print("X/6 - Sorry, try again tomorrow!")
 
+
 if __name__ == "__main__":
     main()
