@@ -1,5 +1,4 @@
-"""Creating lists of integers."""
-
+"""Creating and playing with lists of integers."""
 
 __author__ = "730555076"
 
