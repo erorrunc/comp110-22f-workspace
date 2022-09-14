@@ -8,7 +8,7 @@ def all(list_of_integers: list[int], given_int: int) -> bool:
     """Determining if a character is given in a list of integers."""
     i: int = 0
     if len(list_of_integers) == 0:
-            return False
+        return False
     while i < len(list_of_integers):
         if list_of_integers[i] != given_int:
             return False
@@ -36,10 +36,12 @@ def is_equal(c: list[int], d: list[int]) -> bool:
     """Determining if two lists of integers are deeply equal."""
     i: int = 0
     a: bool = True
-    while len(c) == len(d) and i < len(c) and i < len(d):
+    while i < len(c) and i < len(d):
         if c[i] == d[i]:
             a = True
         else:
             a = False
         i = i + 1
+    if len(c) != len(d):
+        a = False
     return a
