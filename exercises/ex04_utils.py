@@ -21,7 +21,7 @@ def max(input: list[int]) -> int:
     if len(input) == 0:
         raise ValueError("max() arg is an empty List")
     i: int = 0 
-    a: int = 0
+    a: int = -100
     while i < len(input):
         if input[i] > a:
             a = input[i]
@@ -34,10 +34,10 @@ def is_equal(c: list[int], d: list[int]) -> bool:
     """Determining if two lists of integers are deeply equal."""
     i: int = 0
     a: bool = True
-    while i < len(c):
+    while i < len(c) and i < len(d):
         if c[i] == d[i]:
             a = True
         else:
-            return False
+            a = False
         i = i + 1
     return a
