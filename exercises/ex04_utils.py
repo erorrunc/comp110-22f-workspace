@@ -2,8 +2,10 @@
 
 __author__ = "730555076"
 
+
 # determining if a value is contained in a list
 def all(list_of_integers: list[int], given_int: int) -> bool:
+    """Determining if a character is given in a list of integers."""
     i: int = 0
     while i < len(list_of_integers):
         if list_of_integers[i] != given_int:
@@ -12,8 +14,10 @@ def all(list_of_integers: list[int], given_int: int) -> bool:
     else:
         return True
 
+
 # determining the maximum value in a list
 def max(input: list[int]) -> int:
+    """Finding the maximum value in a list of integers."""
     if len(input) == 0:
         raise ValueError("max() arg is an empty List")
     i: int = 0 
@@ -24,8 +28,10 @@ def max(input: list[int]) -> int:
         i = i + 1
     return a
 
+
 # determining if two lists are identical 
 def is_equal(c: list[int], d: list[int]) -> bool:
+    """Determining if two lists of integers are deeply equal."""
     i: int = 0
     a: bool = True
     while i < len(c):
@@ -34,4 +40,4 @@ def is_equal(c: list[int], d: list[int]) -> bool:
         else:
             return False
         i = i + 1
-    return True
+    return a
