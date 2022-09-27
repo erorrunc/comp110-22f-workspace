@@ -32,7 +32,7 @@ def concat(list_1: list[int], list_2: list[int]) -> list[int]:
 def sub(a_list: list[int], start: int, end: int) -> list[int]:
     """Generate a list between the given start index and given ending index."""
     sub_list: list[int] = list()
-    if len(a_list) == 0 or start > len(a_list) or end <= 0:
+    if len(a_list) == 0 or start > len(a_list) or end <= 0 or start == len(a_list):
         return []
 
     if start < 0:
