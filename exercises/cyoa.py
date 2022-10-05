@@ -3,24 +3,26 @@
 __author__ = "730555076"
 
 
-# Emoji variables
+# Emoji variables and global variables
 MAGIC_WAND_EMOJI: str = "\U0001FA84 "
 PARCHMENT_EMOJI: str = "\U0001F4DC "
 BOLT_EMOJI: str = "\U000026A1 "
+points: int
+player: str
 
 
+# "Adventure points" track a person's score throughout the quiz
+# Depending on a person's score, they are sorted to a particular house
 def main() -> None:
     """Initializes adventure points and gives player a choice to begin."""
-    # "Adventure points" track a person's score throughout the quiz
-    # Depending on a person's score, they are sorted to a particular house
     global points
-    points: int = 0
+    points = 0
     greet()
     choice: str = input("Type '1' to start a new quiz, '2' to change player name, and '3' to exit the quiz. \nType here: ")
 
 # Game Loop
     continue_game: bool = True
-    while continue_game == True:
+    while continue_game is True:
         if choice == "3":
             print(f"Thanks for playing! Your total score is {points} adventure points, and you were not able to be sorted into a house.")
             continue_game = False
@@ -52,8 +54,8 @@ def main() -> None:
             question_5()
             fate()
 
-            house: str = resulting_house()
-            end_game: str = (f"\nYou were sorted into: {house}! {MAGIC_WAND_EMOJI} {PARCHMENT_EMOJI}Thank you for playing! Your total score is {points} adventure points. \n")
+            house = resulting_house()
+            end_game = (f"\nYou were sorted into: {house}! {MAGIC_WAND_EMOJI} {PARCHMENT_EMOJI}Thank you for playing! Your total score is {points} adventure points. \n")
             print(end_game)
             choice = input(f"Your total score is {points} points. To play again and start your points over, type '1', to change player name and play again, type '2', and to exit the game, type '3'. \nType here: ")
             if choice == "3":
@@ -67,8 +69,9 @@ def main() -> None:
 def greet() -> None:
     """Welcomes the player and asks for player name."""
     global player
+
     print(f"Welcome, young wizards and witches! {MAGIC_WAND_EMOJI} {PARCHMENT_EMOJI} Take this short quiz to find out what Hogwarts house you will be sorted into.")
-    player: str = input("What is your name? ")
+    player = input("What is your name? ")
 
 
 # Option 2, changing player name
@@ -82,13 +85,14 @@ def change_name() -> None:
 def question_1() -> None:
     """Question 1 of quiz."""
     global points
+    global player
 
     input(f"Hello, {player}! For each question, type the letter choice that best applies to you. Ready? Press Enter to continue.")
     print(f"\n{BOLT_EMOJI} Question 1 {BOLT_EMOJI} \n{player}, what is your favorite time of day? \nA: Bright and early in the morning. \nB: Lunch time and early afternoon. \nC: Evening and sunset. \nD: The few hours before midnight.")
 
     answer: str = input("Answer: ")
     valid_answer: bool = False
-    while valid_answer == False:
+    while valid_answer is False:
         # Ravenclaw
         if answer == "A":
             points += 2
@@ -118,7 +122,7 @@ def question_2() -> None:
 
     answer: str = input("Answer: ")
     valid_answer: bool = False
-    while valid_answer == False:
+    while valid_answer is False:
         # Ravenclaw
         if answer == "A":
             points += 2
@@ -143,12 +147,13 @@ def question_2() -> None:
 def question_3() -> None:
     """Question 3 of quiz."""
     global points
+    global player
 
     print(f"\n{BOLT_EMOJI} Question 3 {BOLT_EMOJI} \n{player}, what do you want to be remembered as? \nA: Intelligent. \nB: Brave. \nC: Ambitious. \nD: Caring.")
 
     answer: str = input("Answer: ")
     valid_answer: bool = False
-    while valid_answer == False:
+    while valid_answer is False:
         # Ravenclaw
         if answer == "A":
             points += 2
@@ -171,13 +176,13 @@ def question_3() -> None:
 
 # Question 4
 def question_4(points: int) -> int:
-    "Question 4 of quiz."
-
+    """Question 4 of quiz."""
+    global player
     print(f"\n{BOLT_EMOJI} Question 4 {BOLT_EMOJI} \n{player}, what animal would you have as a pet? \nA: Owl. \nB: Cat. \nC: Toad. \nD: Snake.")
 
     answer: str = input("Answer: ")
     valid_answer: bool = False
-    while valid_answer == False:
+    while valid_answer is False:
         # Ravenclaw
         if answer == "A":
             points += 2
@@ -208,7 +213,7 @@ def question_5() -> None:
 
     answer: str = input("Answer: ")
     valid_answer: bool = False
-    while valid_answer == False:
+    while valid_answer is False:
         # Gryffindor 
         if answer == "A":
             points += 3
@@ -252,6 +257,8 @@ def fate() -> None:
 # End results prints what house player is based on where their adventure points lie
 def resulting_house() -> str:
     """Determines what house player is based on how many adventure points they have."""
+    global points
+
     house: str = ""
     if points >= 1 and points <= 6:
         house = "HUFFLEPUFF"
