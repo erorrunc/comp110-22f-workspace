@@ -14,7 +14,7 @@ def main() -> None:
     # "Adventure points" track a person's score throughout the quiz
     # Depending on a person's score, they are sorted to a particular house
     global points
-    points = 0
+    points: int = 0
     greet()
     choice: str = input("Type '1' to start a new quiz, '2' to change player name, and '3' to exit the quiz. \nType here: ")
 
@@ -68,7 +68,7 @@ def greet() -> None:
     """Welcomes the player and asks for player name."""
     global player
     print(f"Welcome, young wizards and witches! {MAGIC_WAND_EMOJI} {PARCHMENT_EMOJI} Take this short quiz to find out what Hogwarts house you will be sorted into.")
-    player = input("What is your name? ")
+    player: str = input("What is your name? ")
 
 
 # Option 2, changing player name
