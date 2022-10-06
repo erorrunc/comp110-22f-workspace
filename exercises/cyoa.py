@@ -247,11 +247,11 @@ def fate() -> None:
     if sorting_hat == 1:
         points += 1
     elif sorting_hat == 2:
-        points += 2
+        points -= 1
     elif sorting_hat == 3:
-        points += 3
+        points += 2
     else:
-        points += 4
+        points -= 2
 
 
 # End results prints what house player is based on where their adventure points lie
