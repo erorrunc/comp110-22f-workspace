@@ -55,3 +55,7 @@ for i in range(0, len(names), 2):
     print(f"{i}, {names[i]}")
 
 print(odds_to_99.stop)
+
+to_nine: range = range(0, 10, 1)
+for item in to_nine:
+    print(item)
