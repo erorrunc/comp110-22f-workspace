@@ -8,6 +8,7 @@ __author__ = "730555076"
 
 
 class Simpy:
+    """Implementing a utility class for numerical data."""
     values: list[float]
 
     def __init__(self, values: list[float]):
@@ -106,17 +107,17 @@ class Simpy:
         return result
 
     def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
-        """Add subcription notation."""
+        """Return items at given indices and return masked values."""
         if isinstance(rhs, int):
             result: float = 0.0
             i: int = 0
-        while i < len(self.values):
-            if rhs == i:
-                result = self.values[i]
-            i += 1
+            while i < len(self.values):
+                if rhs == i:
+                    result = self.values[i]
+                i += 1
         else:
-            result: list[bool] = []
-            
-        
+            result: Simpy = Simpy([])
+            for i in range(len(rhs)):
+                if rhs[i]:
+                    result.values.append(self.values[i])
         return result
-
